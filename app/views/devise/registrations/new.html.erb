@@ -1,0 +1,26 @@
+<% provide(:title, "Sign-up") %>
+   <!-- sign up form -->
+   <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" style="background-image: url(<%= asset_path 'account-bg.jpg' %>);">
+      <div class="agileinfo_signin">
+      <h3>Sign Up</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+          <%= f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", required: "" %> 
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, placeholder: "Password", autocomplete: "off" %> 
+          <%= f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off" %> 
+          <div class="signin-rit">
+            <span class="agree-checkbox">
+              <label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <%= link_to 'Terms of Use', terms_path, class: "w3layouts-t", target: "_blank" %> and <%= link_to 'Privacy Policy', privacy_path, class: "w3layouts-t", target: "_blank" %></label>
+            </span>
+          </div>
+          <%= f.submit "Sign up" %>
+        <% end %>
+        <h6> Already a member? <%= link_to 'Sign in', new_user_session_path %> </h6>
+      </div>
+    </div>
+  </section>
+  <!-- //sign up form -->

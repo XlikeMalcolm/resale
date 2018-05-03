@@ -62,12 +62,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3ls-header-right">
 				<ul>
+					<% if user_signed_in? %>
 					<li class="dropdown head-dpdn">
-						<a href="signin.html" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Sign In</a>
+						<%= link_to edit_user_registration_path do %>Logged in as <strong><%= current_user.email %></strong>.<% end %>
+					</li>					
+					<li class="dropdown head-dpdn">
+						<%= link_to edit_user_registration_path do %><i class="fa fa-user" aria-hidden="true"></i> Edit Profile<% end %>
+					</li>					
+					<li class="dropdown head-dpdn">
+						<%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out<% end %>
+					</li>
+					<% else %>
+					<li class="dropdown head-dpdn">
+						<%= link_to new_user_session_path do %><i class="fa fa-user" aria-hidden="true"></i> Sign In<% end %>
 					</li>
 					<li class="dropdown head-dpdn">
-						<a href="signin.html" aria-expanded="false"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+						<%= link_to new_user_registration_path do %><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up<% end %>
 					</li>
+					<% end %>
 					<li class="dropdown head-dpdn">
 						<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 					</li>
@@ -79,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="agile-its-header">
 				<div class="logo">
-					<h1><a href="index.html"><span>Re</span>sale-v2</a></h1>
+					<h1><%= link_to root_url do %><span>Re</span>sale-v2<% end %></h1>
 				</div>
 				<div class="agileits_search">
 					<form action="#" method="post">
@@ -109,6 +121,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</header>
 	<!-- //header -->
+
+	<% if notice %>
+		<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+		<p class="alert alert-danger"><%= alert %></p>
+	<% end %>
 
     <%= yield %>
 
