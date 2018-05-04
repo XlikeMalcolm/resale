@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :categories
   devise_for :users
+  
   root 'static_pages#home'
 
   get 'faq' => 'static_pages#faq'

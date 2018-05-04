@@ -8,4 +8,8 @@ module ApplicationHelper
 			title + ' :: ' + base_title
 		end
 	end
+
+	def categories
+  		categories = Category.all
+  	end
 end

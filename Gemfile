@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.11'
 
+# Use carrierwave for image uploads
+ gem 'carrierwave', '>=0.9'
+
 # Use devise for user modeling
  gem 'devise'
 

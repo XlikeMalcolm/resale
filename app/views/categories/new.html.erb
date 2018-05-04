@@ -1,0 +1,16 @@
+<% provide(:title, "New Category") %>
+   <!-- sign up form -->
+   <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" style="background-image: url(<%= asset_path 'account-bg.jpg' %>);">
+      <div class="agileinfo_signin">
+
+      	<h3>New Category</h3>
+
+        <%= render 'form', category: @category %>
+
+        <h6><%= link_to 'Back', categories_path %></h6>
+
+      </div>
+    </div>
+  </section>
+  <!-- //sign up form -->

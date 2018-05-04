@@ -1,0 +1,18 @@
+<% provide(:title, @category.name) %>
+   <!-- sign up form -->
+   <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" style="background-image: url(<%= asset_path 'account-bg.jpg' %>);">
+      <div class="agileinfo_signin">
+
+      	<h3><%= @category.name %></h3>
+
+        <p><i class="fa <%= @category.icon %>"></i> <%= @category.name %></p>
+        <p><%= @category.description %></p>
+        <p><%= image_tag @category.image %></p>
+
+        <h6><%= link_to 'Back', categories_path %> | <%= link_to 'Add New', new_category_path %></h6>
+
+      </div>
+    </div>
+  </section>
+  <!-- //sign up form -->
