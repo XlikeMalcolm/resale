@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'conditions/index'
+
+  get 'conditions/new'
+
+  get 'conditions/show'
+
+  get 'conditions/edit'
+
   get 'cities/new'
 
   get 'cities/show'
