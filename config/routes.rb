@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'cities/new'
+
+  get 'cities/show'
+
+  get 'cities/edit'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :provinces
 
