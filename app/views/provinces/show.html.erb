@@ -1,0 +1,14 @@
+<% provide(:title, @province.name) %>
+   <!-- sign up form -->
+   <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper">
+      <div class="agileinfo_signin">
+
+      	<h3><%= @province.name %></h3>
+
+        <p><strong><%= @province.name %></strong> <%= link_to 'back', provinces_url %> | <%=  link_to 'Add New Province', new_province_path %></p>
+
+      </div>
+    </div>
+  </section>
+  <!-- //sign up form -->
