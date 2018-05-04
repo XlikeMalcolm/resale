@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Use devise for user modeling
  gem 'devise'
 
+# Use Rails-admin to manage Admin updates
+ gem 'rails_admin', '~>1.2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
