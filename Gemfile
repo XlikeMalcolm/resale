@@ -39,6 +39,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Rails-admin to manage Admin updates
  gem 'rails_admin', '~>1.2'
 
+# Letter opener to open emails in development mode
+gem "letter_opener", :group => :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
