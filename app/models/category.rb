@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+	has_many :adverts
 	mount_uploader :image, ImageUploader
 
 	validates :name, presence: true

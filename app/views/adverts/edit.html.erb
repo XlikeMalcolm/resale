@@ -1,0 +1,16 @@
+<% provide(:title, "Edit your Ad") %>
+	<!-- breadcrumbs -->
+	<div class="w3layouts-breadcrumbs text-center">
+		<div class="container">
+			<span class="agile-breadcrumbs"><%= link_to control_panel_path do %><i class="fa fa-cogs"></i><% end %> / <span>Edit your Ad</span></span>
+		</div>
+	</div>
+	<!-- //breadcrumbs -->
+	<!-- Submit Ad -->
+	<div class="submit-ad main-grid-border">
+		<div class="container">
+			<h2 class="w3-head">Edit your Ad</h2>
+			<%= render 'form', advert: @advert %>
+		</div>	
+	</div>
+	<!-- // Submit Ad -->

@@ -1,0 +1,19 @@
+<% provide(:title, "All Ads") %>
+	<!-- breadcrumbs -->
+	<div class="w3layouts-breadcrumbs text-center">
+		<div class="container">
+			<span class="agile-breadcrumbs"><%= link_to root_url do %><i class="fa fa-home home_1"></i><% end %> / <span>All Ads</span></span>
+		</div>
+	</div>
+	<!-- //breadcrumbs -->
+	<!-- Products -->
+	<div class="total-ads main-grid-border">
+		<div class="container">
+			<%= render 'shared/search_box' %>
+
+			<%= render 'shared/all_categories' %>
+
+      		<%= render 'shared/list_ads' %>
+		</div>	
+	</div>
+	<!-- // Products -->

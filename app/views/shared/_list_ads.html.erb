@@ -1,0 +1,131 @@
+<div class="ads-grid">
+        <%= render "shared/sidebar" %>
+        <div class="agileinfo-ads-display col-md-9">
+          <div class="wrapper">         
+          <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+            <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+              <span class="text">All Ads</span>
+              </a>
+            </li>
+            <li role="presentation" class="next">
+              <a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">
+              <span class="text">Ads with Photos</span>
+              </a>
+            </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+               <div>
+                        <div id="container">
+                <div class="view-controls-list" id="viewcontrols">
+                  <label>view :</label>
+                  <a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+                  <a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+                </div>
+                <div class="sort">
+                   <div class="sort-by">
+                    <label>Sort By : </label>
+                    <select>
+                            <option value="">Most recent</option>
+                            <option value="">Price: Rs Low to High</option>
+                            <option value="">Price: Rs High to Low</option>
+                    </select>
+                     </div>
+                   </div>
+                <div class="clearfix"></div>
+              <ul class="list">
+                <% if @adverts.empty? %>
+                  <h3>Sorry! no ads found.</h3>
+                <% else %>
+
+                <% @adverts.each do |advert| %>
+                <%= link_to advert do %>
+                  <li>
+                  <%= image_tag advert.image, width: "100%", title: "", alt: "" %>
+                  <section class="list-left">
+                  <h5 class="title"><%= advert.title %></h5>
+                  <span class="adprice">R<%= advert.price %></span>
+                  <p class="catpath"><%= advert.category.name %></p>
+                  </section>
+                  <section class="list-right">
+                  <span class="date"><%= time_ago_in_words(advert.created_at) %> ago</span>
+                  <span class="cityname"><%= advert.city.name %></span>
+                  </section>
+                  <div class="clearfix"></div>
+                  </li> 
+                <% end %> <!-- end link tag -->
+                <% end %> <!-- end advert each loop -->
+
+                <% end %> <!-- end if statement -->
+
+              </ul>
+            </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+             <div>
+                        <div id="container">
+                <div class="view-controls-list" id="viewcontrols">
+                  <label>view :</label>
+                  <a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
+                  <a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
+                </div>
+                <div class="sort">
+                   <div class="sort-by">
+                    <label>Sort By : </label>
+                    <select>
+                            <option value="">Most recent</option>
+                            <option value="">Price: Rs Low to High</option>
+                            <option value="">Price: Rs High to Low</option>
+                    </select>
+                     </div>
+                   </div>
+                <div class="clearfix"></div>
+              <ul class="list">
+                <% if @adverts.empty? %>
+                  <h3>Sorry! no ads found.</h3>
+                <% else %>
+
+                <% @adverts.each do |advert| %>
+                <%= link_to advert do %>
+                  <li>
+                  <%= image_tag advert.image, width: "100%", title: "", alt: "" %>
+                  <section class="list-left">
+                  <h5 class="title"><%= advert.title %></h5>
+                  <span class="adprice">R<%= advert.price %></span>
+                  <p class="catpath"><%= advert.category.name %></p>
+                  </section>
+                  <section class="list-right">
+                  <span class="date"><%= time_ago_in_words(advert.created_at) %> ago</span>
+                  <span class="cityname"><%= advert.city.name %></span>
+                  </section>
+                  <div class="clearfix"></div>
+                  </li> 
+                <% end %> <!-- end link tag -->
+                <% end %> <!-- end advert each loop -->
+
+                <% end %> <!-- end if statement -->
+              </ul>
+            </div>
+              </div>
+            </div>
+            <ul class="pagination pagination-sm">
+              <li><a href="#">Prev</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">7</a></li>
+              <li><a href="#">8</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>

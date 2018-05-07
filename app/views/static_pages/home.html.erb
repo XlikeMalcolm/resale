@@ -5,7 +5,7 @@
 				<li>
 					<div class="w3ls-slide-text">
 						<h3>Sell or Advertise anything online</h3>
-						<a href="categories.html" class="w3layouts-explore-all">Browse all Categories</a>
+						<%= link_to "Browse all Categories", categories_path, class: "w3layouts-explore-all" %>
 					</div>
 				</li>
 			</ul>
@@ -39,246 +39,41 @@
 			<div class="w3l-popular-ads">  
 				<h3>Most Popular Ads</h3>
 				 <div class="w3l-popular-ads-info">
+				 	<% popular.each do |category| %>
 					<div class="col-md-4 w3ls-portfolio-left">
 						<div class="portfolio-img event-img">
-							<%= image_tag 'ad1', class: "img-responsive", alt: "" %>
+							<%= image_tag category.image, class: "img-responsive", alt: "" %>
 							<div class="over-image"></div>
 						</div>
 						<div class="portfolio-description">
-						   <h4><a href="cars.html">Latest Cars</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="cars.html">
+						   <h4><a href="cars.html"><%= category.name %></a></h4>
+						   <p><%= category.description %></p>
+							<%= link_to category do %>
 								<span>Explore</span>
-							</a>
+							<% end %>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<%= image_tag 'ad2', class: "img-responsive", alt: "" %>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="real-estate.html">Apartments for Sale</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="real-estate.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<%= image_tag 'ad3', class: "img-responsive", alt: "" %>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="jobs.html">BPO jobs</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="jobs.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<%= image_tag 'ad4', class: "img-responsive", alt: "" %>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="electronics-appliances.html">Accessories</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="electronics-appliances.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<%= image_tag 'ad5', class: "img-responsive", alt: "" %>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="furnitures.html">Home Appliances</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="furnitures.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="col-md-4 w3ls-portfolio-left">
-						<div class="portfolio-img event-img">
-							<%= image_tag 'ad6', class: "img-responsive", alt: "" %>
-							 <div class="over-image"></div>
-						</div>
-						<div class="portfolio-description">
-						   <h4><a href="fashion.html">Clothing</a></h4>
-						   <p>Suspendisse placerat mattis arcu nec por</p>
-							<a href="fashion.html">
-								<span>Explore</span>
-							</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+					<% end %>
 					<div class="clearfix"> </div>
 				 </div>
 			 </div>
-			<!-- most-popular-ads -->									
-			<div class="trending-ads">
-				<div class="container">
-				<!-- slider -->
-				<div class="agile-trend-ads">
-					<h2>Trending Ads</h2>
-							<ul id="flexiselDemo3">
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p1', alt: "" %>
-											<span class="price">&#36; 450</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p2', alt: "" %>
-											<span class="price">&#36; 399</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p3', alt: "" %>
-											<span class="price">&#36; 199</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>8 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p4', alt: "" %>
-											<span class="price">&#36; 159</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>19 hour ago</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p5', alt: "" %>
-											<span class="price">&#36; 1599</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p6', alt: "" %>
-											<span class="price">&#36; 1099</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>1 day ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p7', alt: "" %>
-											<span class="price">&#36; 109</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>9 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p8', alt: "" %>
-											<span class="price">&#36; 189</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p9', alt: "" %>
-											<span class="price">&#36; 2599</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p10', alt: "" %>
-											<span class="price">&#36; 3999</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>It is a long established fact that a reader</h5>
-											<span>9 hour ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p11', alt: "" %>
-											<span class="price">&#36; 2699</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>passage of Lorem Ipsum you need to be</h5>
-											<span>1 day ago</span>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<%= image_tag 'p12', alt: "" %>
-											<span class="price">&#36; 899</span>
-										</a> 
-										<div class="w3-ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
-										</div>
-									</div>
-								</li>
-						</ul>
-					</div>   
-			</div>
-			<!-- //slider -->				
-			</div>
+			
 			<!--partners-->
 			<div class="w3layouts-partners">
 				<h3>Our Partners</h3>
 					<div class="container">
 						<ul>
-							<li><a href="#"><%= image_tag 'p-1', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-2', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-3', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-4', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-5', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-6', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-7', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-8', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-9', class: "img-responsive", alt:"" %></a></li>
-							<li><a href="#"><%= image_tag 'p-10', class: "img-responsive", alt:"" %></a></li>	
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-1', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-2', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-3', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-4', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-5', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-6', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-7', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-8', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-9', class: "img-responsive", alt:"" %></a></li>
+							<li><a href="www.2madapps.com" target="_blank"><%= image_tag 'p-10', class: "img-responsive", alt:"" %></a></li>	
 						</ul>
 					</div>
 				</div>	

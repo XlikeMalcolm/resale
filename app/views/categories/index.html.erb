@@ -1,2 +1,52 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<% provide(:title, 'categories') %>
+  <!-- breadcrumbs -->
+  <div class="w3layouts-breadcrumbs text-center">
+    <div class="container">
+      <span class="agile-breadcrumbs"><%= link_to root_url do %><i class="fa fa-home home_1"></i><% end %> / <span>Categories</span></span>
+    </div>
+  </div>
+  <!-- //breadcrumbs -->
+<!-- content-starts-here -->
+		<div class="main-content">
+			<div class="w3-categories">
+				<h3>Browse Categories</h3>
+				<div class="container">
+					<% categories.each do |category| %>
+					<div class="col-md-3">
+						<div class="focus-grid w3layouts-boder1">
+							<%= link_to category, class: "btn-8" do %>
+								<div class="focus-border">
+									<div class="focus-layout">
+										<div class="focus-image"><i class="fa <%= category.icon %>"></i></div>
+										<h4 class="clrchg"><%= category.name %></h4>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+					<% end %>
+					<div class="clearfix"></div>
+				</div>
+			</div>	
+		<!-- mobile app -->
+			<div class="agile-info-mobile-app">
+				<div class="container">
+					<div class="col-md-5 w3-app-left">
+						<a href="mobileapp.html"><%= image_tag 'app', alt: "" %></a>
+					</div>
+					<div class="col-md-7 w3-app-right">
+						<h3>Resale App is the <span>Easiest</span> way for Selling and buying second-hand goods</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor Sed bibendum varius euismod. Integer eget turpis sit amet lorem rutrum ullamcorper sed sed dui. vestibulum odio at elementum. Suspendisse et condimentum nibh.</p>
+						<div class="agileits-dwld-app">
+							<h6>Download The App : 
+								<a href="#"><i class="fa fa-apple"></i></a>
+								<a href="#"><i class="fa fa-windows"></i></a>
+								<a href="#"><i class="fa fa-android"></i></a>
+							</h6>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!-- //mobile app -->
+		</div>

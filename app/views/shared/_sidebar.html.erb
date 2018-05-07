@@ -1,0 +1,28 @@
+<div class="side-bar col-md-3">
+		<div class="search-hotel">
+		<h3 class="agileits-sear-head">Name contains</h3>
+		<form>
+			<input type="text" value="Product name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Product name...';}" required="">
+			<input type="submit" value=" ">
+		</form>
+	</div>
+	
+	<div class="w3ls-featured-ads">
+		<h2 class="sear-head fer">Featured Ads</h2>
+		<% featured.each do |advert| %>
+		<div class="w3l-featured-ad">
+			<a href="single.html">
+				<div class="w3-featured-ad-left">
+					<%= image_tag advert.image, title: "ad image", alt: "" %>
+				</div>
+				<div class="w3-featured-ad-right">
+					<h4><%= advert.title %></h4>
+					<p>R <%= advert.price %></p>
+				</div>
+				<div class="clearfix"></div>
+			</a>
+		</div>
+		<% end %>
+		<div class="clearfix"></div>
+	</div>
+</div>

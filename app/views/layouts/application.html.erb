@@ -61,6 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<%= link_to edit_user_registration_path do %><i class="fa fa-user" aria-hidden="true"></i> Edit Profile<% end %>
 					</li>					
 					<li class="dropdown head-dpdn">
+						<%= link_to control_panel_path do %><i class="fa fa-cogs" aria-hidden="true"></i> Control Panel<% end %>
+					</li>					
+					<li class="dropdown head-dpdn">
 						<%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out<% end %>
 					</li>
 					<% else %>
@@ -85,27 +88,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h1><%= link_to root_url do %><span>Re</span>sale-v2<% end %></h1>
 				</div>
 				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="text" placeholder="How can we help you today?" required="" />
-						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">All Categories</option>
-							<option value="Mobiles">Mobiles</option>
-							<option value="Electronics & Appliances">Electronics & Appliances</option>
-							<option value="Cars">Cars</option>
-							<option value="Bikes">Bikes</option>
-							<option value="Furnitures">Furnitures</option>
-							<option value="Books, Sports & Hobbies">Books, Sports & Hobbies</option>
-							<option value="Fashion">Fashion</option>
-							<option value="Kids">Kids</option>
-							<option value="Services">Services</option>
-							<option value="Jobs">Jobs</option>
-							<option value="Real Estates">Real Estates</option>
-						</select>
+					<%= form_for search do |form| %>
+						<%= form.text_field :keywords, placeholder: "How can we help you today?", required: "" %>
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<i class="fa fa-search" aria-hidden="true"> </i>
 						</button>
-					</form>
-				<a class="post-w3layouts-ad" href="post-ad.html">Post Free Ad</a>
+					<% end %>
+				<%= link_to "Post Free Ad", new_advert_path, class: "post-w3layouts-ad" %>
 				</div>	
 				<div class="clearfix"></div>
 			</div>
@@ -209,80 +198,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<script src="assets/bootstrap-select.js"></script>
 
 
- 
-		<script>
-		  $(document).ready(function () {
-			var mySelect = $('#first-disabled2');
 
-			$('#special').on('click', function () {
-			  mySelect.find('option:selected').prop('disabled', true);
-			  mySelect.selectpicker('refresh');
-			});
-
-			$('#special2').on('click', function () {
-			  mySelect.find('option:disabled').prop('disabled', false);
-			  mySelect.selectpicker('refresh');
-			});
-
-			$('#basic2').selectpicker({
-			  liveSearch: true,
-			  maxOptions: 1
-			});
-		  });
-		</script>
-		<!-- language-select -->
-		<script type="text/javascript" src="assets/jquery.leanModal.min.js"></script>
-		<link href="assets/css/jquery.uls.css" rel="stylesheet"/>
-		<link href="assets/css/jquery.uls.grid.css" rel="stylesheet"/>
-		<link href="assets/css/jquery.uls.lcd.css" rel="stylesheet"/>
-		<!-- Source -->
-		<script src="assets/jquery.uls.data.js"></script>
-		<script src="assets/jquery.uls.data.utils.js"></script>
-		<script src="assets/jquery.uls.lcd.js"></script>
-		<script src="assets/jquery.uls.languagefilter.js"></script>
-		<script src="assets/jquery.uls.regionfilter.js"></script>
-		<script src="assets/jquery.uls.core.js"></script>
 		
-		<script>
-					$( document ).ready( function() {
-						$( '.uls-trigger' ).uls( {
-							onSelect : function( language ) {
-								var languageName = $.uls.data.getAutonym( language );
-								$( '.uls-trigger' ).text( languageName );
-							},
-							quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
-						} );
-					} );
-				</script>
-		<!-- //language-select -->
-		<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->	
-					<script type="text/javascript">
-						 $(window).load(function() {
-							$("#flexiselDemo3").flexisel({
-								visibleItems:1,
-								animationSpeed: 1000,
-								autoPlay: true,
-								autoPlaySpeed: 5000,    		
-								pauseOnHover: true,
-								enableResponsiveBreakpoints: true,
-								responsiveBreakpoints: { 
-									portrait: { 
-										changePoint:480,
-										visibleItems:1
-									}, 
-									landscape: { 
-										changePoint:640,
-										visibleItems:1
-									},
-									tablet: { 
-										changePoint:768,
-										visibleItems:1
-									}
-								}
-							});
-							
-						});
-					   </script>
 		<!-- Slider-JavaScript -->
 			<script src="js/responsiveslides.min.js"></script>	
 			 <script>

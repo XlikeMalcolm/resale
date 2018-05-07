@@ -1,0 +1,8 @@
+<div class="all-categories">
+	<h3> Select your category and find the perfect ad</h3>
+	<ul class="all-cat-list">
+		<% categories.each do |category| %>
+			<li><%= link_to category do %><%= category.name %> <span class="num-of-ads">(<%= category.adverts.count %>)</span><% end %></li>
+		<% end %>
+	</ul>
+</div>

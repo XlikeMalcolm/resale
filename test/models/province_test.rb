@@ -1,7 +1,17 @@
 require 'test_helper'
 
 class ProvinceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+  	@province = Province.new(name: "Gauteng")
+  end
+
+  test "should be valid" do
+  	assert @province.valid?
+  end
+
+  # Testing presences
+  test "name should be present" do
+  	@province.name = "  "
+  	assert_not @province.valid?
+  end
 end

@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'conditions/index'
+  resources :searches
 
-  get 'conditions/new'
+  resources :adverts
+  get 'control_panel' => 'adverts#controlpanel'
 
-  get 'conditions/show'
+  resources :conditions
 
-  get 'conditions/edit'
-
-  get 'cities/new'
-
-  get 'cities/show'
-
-  get 'cities/edit'
+  resources :cities
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :provinces

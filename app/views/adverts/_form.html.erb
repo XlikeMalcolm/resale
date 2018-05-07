@@ -1,0 +1,38 @@
+<div class="post-ad-form">
+	<%= form_with(model: advert, local: true) do |form| %>
+	
+		<%= render 'shared/error_messages.html.erb' %>
+
+		<%= form.label :category %><span>*</span>
+		<%= form.collection_select :category_id, Category.all, :id, :name %>
+		<div class="clearfix"></div>
+		<%= form.label :title %><span>*</span>
+		<%= form.text_field :title, id: :advert_title %>
+		<div class="clearfix"></div>
+		<%= form.label :price %><span>*</span>
+		<%= form.text_field :price, id: :advert_price %>
+		<div class="clearfix"></div>
+		<%= form.label :description %>
+		<%= form.text_area :description, id: :advert_description %>
+		<div class="clearfix"></div>
+		<%= form.label :condition %><span>*</span>
+		<%= form.collection_select :condition_id, Condition.all, :id, :name %>
+		<div class="clearfix"></div>
+		<%= form.label :city %><span>*</span>
+		<%= form.collection_select :city_id, City.all, :id, :name %>
+		<div class="clearfix"></div>
+	<div class="upload-ad-photos">
+	<%= form.label :photo %>	
+		<div class="photos-upload-view">
+			<%= form.file_field :image, id: :advert_image %>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="personal-details">
+		<div class="clearfix"></div>
+		<p class="post-terms">By clicking <strong>post Button</strong> you accept our <%= link_to "Terms of Use", terms_path, target: "_blank" %> and <%= link_to "Privacy Policy", privacy_path, target: "_blank" %></p>
+	<%= form.submit %>					
+	<div class="clearfix"></div>
+	<% end %>
+	</div>
+</div>
